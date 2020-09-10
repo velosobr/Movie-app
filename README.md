@@ -25,3 +25,16 @@
 #### Opção para a atualizar a lista dos filmes.
 
 #### Pesquisar por filmes.
+
+
+## Requisitos não-funcionais
+
+### Versão inicial:
+- #### O app deve levar em consideração os principios SOLID.
+    Apresentar se possível, ao menos um exemplo de cada item do SOLID.
+- #### Utilizar as bibliotecas do Android Jetpack.
+    Hilt, naivgation, room, Livedata, lifecycle, viewmodel.
+- #### Minimum SDK level 21
+- #### Kotlin based
+- #### Coroutines for asynchronous. 
+- #### Retrofit2 & OkHttp3 - construct the REST APIs and paging network data.
