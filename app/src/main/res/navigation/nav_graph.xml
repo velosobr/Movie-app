@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.velosobr.movieapp.MainActivity"
+        android:name="com.velosobr.movieapp.ui.MoviesActivity"
         android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/activity_movies" />
 </navigation>
