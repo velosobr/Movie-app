@@ -7,8 +7,9 @@
     tools:context=".ui.MoviesActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
         android:layout_width="0dp"
-        android:layout_height="?android:actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
