@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.ui.movies
+ package com.velosobr.movieapp.presentation.movies
 
 import android.view.LayoutInflater
 import android.view.View
