@@ -25,15 +25,14 @@ class MoviesAdapter(
 
     class MoviesViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
 
-        val title = itemview.movieTitle
-        val releaseDate = itemview.releaseDate
+        val title = itemview.movie_title
+        val releaseDate = itemview.release_date
         val diretor = itemview.diretorName
 
         fun bindView(movie: Movie) {
             itemView.run {
                 title.text = movie.title
-                releaseDate.text = movie.release_date
-                diretorName.text = movie.director
+                releaseDate.text = movie.release_date.take(4)
             }
         }
     }

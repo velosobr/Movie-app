@@ -1,7 +1,6 @@
 package com.velosobr.movieapp.presentation.movies
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -23,7 +22,6 @@ class MoviesActivity : AppCompatActivity() {
 
         viewModel.moviesLiveData.observe(this, Observer {
             it?.let { movies ->
-                Log.i("movies", "movies")
                 //with para evitar ficar chamando o recyclerMovies muitas vezes
                 with(recyclerMovies) {
                     layoutManager =
@@ -33,6 +31,7 @@ class MoviesActivity : AppCompatActivity() {
                 }
             }
         })
+        viewModel.getMovies()
 
 
     }

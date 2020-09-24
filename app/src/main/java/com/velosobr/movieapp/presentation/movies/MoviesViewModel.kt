@@ -8,7 +8,6 @@ import com.velosobr.movieapp.data.services.APIService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Path
 
 class MoviesViewModel : ViewModel() {
 
@@ -32,13 +31,12 @@ class MoviesViewModel : ViewModel() {
                             movies.add(movie)
                         }
                     }
-
                     moviesLiveData.value = movies
                 }
             }
 
             override fun onFailure(call: Call<MovieBodyResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                println("Deu erro" + t.message)
             }
 
         })
