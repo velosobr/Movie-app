@@ -9,7 +9,7 @@ class MoviesViewModel : ViewModel() {
     val moviesLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
 
     fun getMovies() {
-        moviesLiveData.value = getMoviesMocked()
+
     }
 
     fun getMoviesMocked(): List<Movie> {
