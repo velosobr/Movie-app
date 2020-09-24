@@ -13,5 +13,5 @@ object APIService {
             .build()
     }
 
-    val service = initRetrofit().create(TMDBService::class.java)
+    val service: TMDBService = initRetrofit().create(TMDBService::class.java)
 }
