@@ -12,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_movies.*
 class MoviesActivity : AppCompatActivity() {
     private val viewModel: MoviesViewModel by viewModels()
 
-    @Inject
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies)
