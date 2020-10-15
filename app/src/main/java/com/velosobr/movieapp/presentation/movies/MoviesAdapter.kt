@@ -27,12 +27,13 @@ class MoviesAdapter(
 
         val title = itemview.movie_title
         val releaseDate = itemview.release_date
-        val diretor = itemview.diretorName
+        val genIds = itemview.genero
 
         fun bindView(movie: Movie) {
             itemView.run {
                 title.text = movie.title
                 releaseDate.text = movie.release_date.take(4)
+                genIds.text = movie.genIds.toString()
             }
         }
     }

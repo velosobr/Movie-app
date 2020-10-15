@@ -26,7 +26,9 @@ class MoviesViewModel : ViewModel() {
                         for (result in it.movieResults) {
                             val movie = Movie(
                                 result.title,
-                                result.release_date
+                                result.release_date,
+                                result.genre_ids
+
                             )
                             movies.add(movie)
                         }
@@ -42,11 +44,11 @@ class MoviesViewModel : ViewModel() {
         })
     }
 
-    fun getMoviesMocked(): List<Movie> {
-        return listOf(
-            Movie("A volta dos que não foram", release_date = "2010"),
-            Movie("So Much Love to Give", release_date = "2020"),
-            Movie("Dark Desire ", release_date = "2010"),
+//    fun getMoviesMocked(): List<Movie> {
+//        return listOf(
+//            Movie("A volta dos que não foram", release_date = "2010"),
+//            Movie("So Much Love to Give", release_date = "2020"),
+//            Movie("Dark Desire ", release_date = "2010"),
 //                Movie("Missão Greyhound", release_date = "2020", director = "Aaron Schneider"),
 //                Movie("La hora de Salvador Romero", release_date = "2017", director = "Gonzalo Gonzalez"),
 //                Movie("A volta dos que não foram", release_date = "2010", director = "Steve Baulmann"),
@@ -60,6 +62,6 @@ class MoviesViewModel : ViewModel() {
 //                Movie("Missão Greyhound", release_date = "2020", director = "Aaron Schneider"),
 //                Movie("La hora de Salvador Romero", release_date = "2017", director = "Gonzalo Gonzalez")
 
-        )
-    }
+//        )
+//    }
 }
