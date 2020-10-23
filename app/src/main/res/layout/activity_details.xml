@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:maxLines="2"
-                android:text="The Godfather"
+                android:text="@string/movie_title_description"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -77,7 +77,7 @@
                 android:id="@+id/genres_descriptionView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Action, Adventure, Fantasy"
+                android:text="@string/genres_description"
 
                 android:textSize="8sp"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -85,11 +85,11 @@
 
 
             <TextView
-                android:id="@+id/RatingTitle"
+                android:id="@+id/rating_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
-                android:text="Rating"
+                android:text="@string/rating_title"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -101,17 +101,17 @@
                 android:layout_height="match_parent"
                 android:includeFontPadding="false"
                 android:lineSpacingExtra="0dp"
-                android:text="R"
+                android:text="@string/rating_text"
                 android:textSize="48sp"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/RatingTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/rating_title" />
 
             <TextView
-                android:id="@+id/inTheaters"
+                android:id="@+id/in_theaters"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
-                android:text="In Theathers"
+                android:text="@string/in_theaters_title"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline6"
@@ -119,32 +119,32 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageCover_description" />
 
             <TextView
-                android:id="@+id/date_inTheaters"
+                android:id="@+id/date_inTheaters_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:text="MAY 20, 2020"
+                android:text="@string/date_inTheaters_text"
                 app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toBottomOf="@+id/inTheaters" />
+                app:layout_constraintTop_toBottomOf="@+id/in_theaters" />
 
             <TextView
                 android:id="@+id/duration_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
-                android:text="Duration"
+                android:text="@string/duration_title"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/imageCover_description" />
 
             <TextView
-                android:id="@+id/duration"
+                android:id="@+id/duration_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:text="120 min"
+                android:text="@string/duration_text"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/duration_title" />
 
@@ -155,8 +155,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="36dp"
                 android:ellipsize="end"
-                android:maxLines="4"
-                android:text="panning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
+                android:maxLines="5"
+                android:text="@string/description_text"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
                 app:layout_constraintTop_toBottomOf="@+id/rating_text" />

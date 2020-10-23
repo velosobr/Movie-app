@@ -3,4 +3,13 @@
 
     <!-- Movies Activity-->
     <string name="movies_title">Movies</string>
+    <string name="movie_title_description">The Godfather</string>
+    <string name="genres_description">Action, Adventure, Fantasy</string>
+    <string name="rating_title">Rating</string>
+    <string name="rating_text">R</string>
+    <string name="in_theaters_title">In Theathers</string>
+    <string name="date_inTheaters_text">MAY 20, 2020</string>
+    <string name="duration_title">Duration</string>
+    <string name="duration_text">120 min</string>
+    <string name="description_text">panning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.</string>
 </resources>
