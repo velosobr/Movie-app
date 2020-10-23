@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.velosobr.movieapp.R
+import com.velosobr.movieapp.presentation.details.MovieDetailsActivity
 import kotlinx.android.synthetic.main.activity_movies.*
 
 class MoviesActivity : AppCompatActivity() {
@@ -27,7 +28,13 @@ class MoviesActivity : AppCompatActivity() {
                     layoutManager =
                         LinearLayoutManager(this@MoviesActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
-                    adapter = MoviesAdapter(movies)
+                    adapter =
+                        MoviesAdapter(movies) { movie ->//se o lambda é o ultimo param, pode fechar os parenteses
+                            val intent =
+                                MovieDetailsActivity.getStartIntent(this@MoviesActivity, movie)
+                            this@MoviesActivity.startActivity(intent)
+
+                        }
                 }
             }
         })

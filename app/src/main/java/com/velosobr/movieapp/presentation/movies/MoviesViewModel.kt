@@ -22,11 +22,12 @@ class MoviesViewModel : ViewModel() {
                 if (response.isSuccessful) {
                     val movies: MutableList<Movie> = mutableListOf()
 
-                    response.body()?.let {
-                        for (result in it.movieResults) {
+                    response.body()?.let { MovieBodyResponse ->
+                        for (result in MovieBodyResponse.movieResults) {
                             val movie = Movie(
                                 result.title,
                                 result.release_date,
+                                result.overview,
                                 result.genre_ids
 
                             )

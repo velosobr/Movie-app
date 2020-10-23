@@ -4,7 +4,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 
-object APIService {
+object
+
+APIService {
     //Singleton quando instanciado como object, assim é instanciado uma vez apenas no app
     private fun initRetrofit(): Retrofit {
         return Retrofit.Builder()

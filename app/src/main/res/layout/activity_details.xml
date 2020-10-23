@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.details.DetailsActivity">
+    tools:context=".presentation.details.MovieDetailsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                 android:layout_height="150dp"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
                 app:layout_constraintTop_toTopOf="@+id/guideline3"
-                app:srcCompat="@drawable/posterSample" />
+                app:srcCompat="@drawable/poster_sample" />
 
 
             <TextView
