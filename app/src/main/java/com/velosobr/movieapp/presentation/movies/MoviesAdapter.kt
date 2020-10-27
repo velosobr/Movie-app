@@ -3,10 +3,12 @@ package com.velosobr.movieapp.presentation.movies
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.velosobr.movieapp.R
 import com.velosobr.movieapp.data.model.Movie
-import kotlinx.android.synthetic.main.item_movie.view.*
 
 class MoviesAdapter(
     private val movies: List<Movie>,
@@ -14,7 +16,9 @@ class MoviesAdapter(
 ) : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+        val view = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_movie, parent, false)
         return MoviesViewHolder(view, onItemClickListener)
     }
 
@@ -29,15 +33,17 @@ class MoviesAdapter(
         itemview: View, private val onItemClickListener: ((movie: Movie) -> Unit)
     ) : RecyclerView.ViewHolder(itemview) {
 
-        val title = itemview.movie_title
-        val releaseDate = itemview.release_date
-        val genIds = itemview.genero
+        private val poster: ImageView = itemview.findViewById(R.id.item_movie_poster)
 
         fun bindView(movie: Movie) {
             itemView.run {
-                title.text = movie.title
-                releaseDate.text = movie.release_date.take(4)
-                genIds.text = movie.genIds.toString()
+
+                poster.load("https://image.tmdb.org/t/p/w342${movie.posterPath}") {
+                    crossfade(true)
+                    transformations(RoundedCornersTransformation(4f))
+                }
+
+
 
                 itemView.setOnClickListener {
                     onItemClickListener.invoke(movie)

@@ -17,16 +17,12 @@ class MoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies)
 
-        toolbarMain.title = getString(R.string.movies_title)
-
-        setSupportActionBar(toolbarMain)
-
         viewModel.moviesLiveData.observe(this, Observer {
             it?.let { movies ->
                 //with para evitar ficar chamando o recyclerMovies muitas vezes
-                with(recyclerMovies) {
+                with(recycler_popular_movies) {
                     layoutManager =
-                        LinearLayoutManager(this@MoviesActivity, RecyclerView.VERTICAL, false)
+                        LinearLayoutManager(this@MoviesActivity, RecyclerView.HORIZONTAL, false)
                     setHasFixedSize(true)
                     adapter =
                         MoviesAdapter(movies) { movie ->//se o lambda é o ultimo param, pode fechar os parenteses
@@ -38,7 +34,7 @@ class MoviesActivity : AppCompatActivity() {
                 }
             }
         })
-        viewModel.getMovies()
+        viewModel.getPopularMovies()
 
 
     }

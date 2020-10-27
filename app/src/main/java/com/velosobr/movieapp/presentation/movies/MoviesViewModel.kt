@@ -13,7 +13,7 @@ class MoviesViewModel : ViewModel() {
 
     val moviesLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
 
-    fun getMovies() {
+    fun getPopularMovies(page: Int = 1) {
         APIService.service.getPopularMovies().enqueue(object : Callback<MovieBodyResponse> {
             override fun onResponse(
                 call: Call<MovieBodyResponse>,
@@ -24,14 +24,18 @@ class MoviesViewModel : ViewModel() {
 
                     response.body()?.let { MovieBodyResponse ->
                         for (result in MovieBodyResponse.movieResults) {
-                            val movie = Movie(
-                                result.title,
-                                result.release_date,
-                                result.overview,
-                                result.genre_ids
+                            val movie = result.poster_path?.let {
+                                Movie(
+                                    result.title,
+                                    result.release_date,
+                                    result.overview,
+                                    it,
+                                    result.genre_ids
 
-                            )
-                            movies.add(movie)
+
+                                )
+                            }
+                            movies.add(movie!!)
                         }
                     }
                     moviesLiveData.value = movies
