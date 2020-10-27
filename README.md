@@ -33,7 +33,7 @@
 - #### O app deve levar em consideração os principios SOLID.
     Apresentar se possível, ao menos um exemplo de cada item do SOLID.
 - #### Utilizar as bibliotecas do Android Jetpack.
-    Hilt, naivgation, room, Livedata, lifecycle, viewmodel.
+    Hilt, naivgation, room, Livedata, lifecycle, viewmodel[ok], Coil[ok].
 - #### Minimum SDK level 21
 - #### Kotlin based
 - #### Coroutines for asynchronous. 
