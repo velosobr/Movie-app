@@ -3,7 +3,6 @@ package com.velosobr.movieapp.presentation.movies
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.velosobr.movieapp.R
@@ -17,26 +16,26 @@ class MoviesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movies)
 
-        viewModel.moviesLiveData.observe(this, Observer {
+        toolbarMain.title = getString(R.string.movies_title)
+
+        setSupportActionBar(toolbarMain)
+
+        viewModel.moviesLiveData.observe(this) {
             it?.let { movies ->
                 //with para evitar ficar chamando o recyclerMovies muitas vezes
                 with(recycler_popular_movies) {
                     layoutManager =
                         LinearLayoutManager(this@MoviesActivity, RecyclerView.HORIZONTAL, false)
                     setHasFixedSize(true)
-                    adapter =
-                        MoviesAdapter(movies) { movie ->//se o lambda é o ultimo param, pode fechar os parenteses
-                            val intent =
-                                MovieDetailsActivity.getStartIntent(this@MoviesActivity, movie)
-                            this@MoviesActivity.startActivity(intent)
-
-                        }
+                    adapter = MoviesAdapter(movies) { movie ->
+                        val intent =
+                            MovieDetailsActivity.getStartIntent(this@MoviesActivity, movie)
+                        this@MoviesActivity.startActivity(intent)
+                    }
                 }
             }
-        })
+        }
         viewModel.getPopularMovies()
-
-
     }
 
 
