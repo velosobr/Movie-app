@@ -14,39 +14,40 @@ class MoviesViewModel : ViewModel() {
     val moviesLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
 
     fun getPopularMovies(page: Int = 1) {
-        APIService.service.getPopularMovies().enqueue(object : Callback<MovieBodyResponse> {
-            override fun onResponse(
-                call: Call<MovieBodyResponse>,
-                response: Response<MovieBodyResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val movies: MutableList<Movie> = mutableListOf()
+        APIService.SERVICE_API.getPopularMovies(page = page)
+            .enqueue(object : Callback<MovieBodyResponse> {
+                override fun onResponse(
+                    call: Call<MovieBodyResponse>,
+                    response: Response<MovieBodyResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        val movies: MutableList<Movie> = mutableListOf()
 
-                    response.body()?.let { MovieBodyResponse ->
-                        for (result in MovieBodyResponse.movieResults) {
-                            val movie = result.poster_path?.let {
-                                Movie(
-                                    result.title,
-                                    result.release_date,
-                                    result.overview,
-                                    it,
-                                    result.genre_ids
+                        response.body()?.let { MovieBodyResponse ->
+                            for (result in MovieBodyResponse.movieResults) {
+                                val movie = result.poster_path?.let {
+                                    Movie(
+                                        result.title,
+                                        result.release_date,
+                                        result.overview,
+                                        it,
+                                        result.genre_ids
 
 
-                                )
+                                    )
+                                }
+                                movies.add(movie!!)
                             }
-                            movies.add(movie!!)
                         }
+                        moviesLiveData.value = movies
                     }
-                    moviesLiveData.value = movies
                 }
-            }
 
-            override fun onFailure(call: Call<MovieBodyResponse>, t: Throwable) {
-                println("Deu erro" + t.message)
-            }
+                override fun onFailure(call: Call<MovieBodyResponse>, t: Throwable) {
+                    println("Deu erro" + t.message)
+                }
 
-        })
+            })
     }
 
 //    fun getMoviesMocked(): List<Movie> {

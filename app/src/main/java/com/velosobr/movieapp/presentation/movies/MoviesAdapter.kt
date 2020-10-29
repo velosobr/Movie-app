@@ -11,7 +11,7 @@ import com.velosobr.movieapp.R
 import com.velosobr.movieapp.data.model.Movie
 
 class MoviesAdapter(
-    private val movies: List<Movie>,
+    private var movies: List<Movie>,
     val onItemClickListener: ((movie: Movie) -> Unit)
 ) : RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>() {
 
@@ -28,6 +28,11 @@ class MoviesAdapter(
 
     override fun getItemCount() = movies.count()
 
+    fun updateMovies(movies: List<Movie>) {
+        this.movies = movies
+        notifyDataSetChanged()
+    }
+
     //perguntar sobre o private val onitemclicklistener, duvida de kotlin
     class MoviesViewHolder(
         itemview: View, private val onItemClickListener: ((movie: Movie) -> Unit)
@@ -37,13 +42,10 @@ class MoviesAdapter(
 
         fun bindView(movie: Movie) {
             itemView.run {
-
                 poster.load("https://image.tmdb.org/t/p/w342${movie.posterPath}") {
                     crossfade(true)
                     transformations(RoundedCornersTransformation(4f))
                 }
-
-
 
                 itemView.setOnClickListener {
                     onItemClickListener.invoke(movie)

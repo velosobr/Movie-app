@@ -36,6 +36,7 @@ class MoviesActivity : AppCompatActivity() {
             }
         }
         viewModel.getPopularMovies()
+
     }
 
 
