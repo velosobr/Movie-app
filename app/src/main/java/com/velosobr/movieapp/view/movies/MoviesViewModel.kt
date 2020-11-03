@@ -7,6 +7,9 @@ import com.velosobr.movieapp.service.repository.MovieRepositoryImpl
 
 class MoviesViewModel : ViewModel() {
 
-    val moviesLiveData: MutableLiveData<List<Movie>> = MovieRepositoryImpl()
+    var moviesLiveData: MutableLiveData<List<Movie>> = MutableLiveData()
 
+    fun getPopularMovies() {
+        moviesLiveData = MovieRepositoryImpl(moviesLiveData).getPopularMovies(1)
+    }
 }

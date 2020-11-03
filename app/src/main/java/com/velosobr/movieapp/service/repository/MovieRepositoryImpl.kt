@@ -22,16 +22,15 @@ class MovieRepositoryImpl(
                         val movies: MutableList<Movie> = mutableListOf()
                         response.body()?.let { MovieBodyResponse ->
                             for (result in MovieBodyResponse.movieResults) {
-                                val movie = result.poster_path?.let {
-                                    Movie(
-                                        result.title,
-                                        result.release_date,
-                                        result.overview,
-                                        it,
-                                        result.genre_ids
-                                    )
-                                }
-                                movies.add(movie!!)
+                                val movie = Movie(
+                                    result.title,
+                                    result.release_date,
+                                    result.overview,
+                                    result.poster_path,
+                                    result.genre_ids
+                                )
+
+                                movies.add(movie)
                             }
                         }
                         moviesLiveData.value = movies
