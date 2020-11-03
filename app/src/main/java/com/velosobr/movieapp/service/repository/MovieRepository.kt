@@ -4,5 +4,5 @@ import androidx.lifecycle.MutableLiveData
 import com.velosobr.movieapp.service.model.Movie
 
 interface MovieRepository {
-    fun getPopularMovies(page: Int = 1): MutableLiveData<List<Movie>>
+    fun getPopularMovies(page: Int = 1, moviesLiveData: MutableLiveData<List<Movie>>)
 }

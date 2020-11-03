@@ -10,7 +10,8 @@ import com.velosobr.movieapp.view.details.MovieDetailsActivity
 import kotlinx.android.synthetic.main.activity_movies.*
 
 class MoviesActivity : AppCompatActivity() {
-    private val viewModel: MoviesViewModel by viewModels()
+
+    private val viewModel: MoviesViewModel by viewModels { MoviesViewModelFactory() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

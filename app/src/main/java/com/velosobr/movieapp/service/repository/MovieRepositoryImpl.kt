@@ -7,10 +7,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MovieRepositoryImpl(
-    private val moviesLiveData: MutableLiveData<List<Movie>>
-) : MovieRepository {
-    override fun getPopularMovies(page: Int): MutableLiveData<List<Movie>> {
+class MovieRepositoryImpl : MovieRepository {
+    override fun getPopularMovies(page: Int, moviesLiveData: MutableLiveData<List<Movie>>) {
         APIService.SERVICE_API.getPopularMovies(page = page)
             .enqueue(object : Callback<MovieBodyResponse> {
 
@@ -42,6 +40,7 @@ class MovieRepositoryImpl(
                 }
 
             })
-        return moviesLiveData
+
     }
+
 }
