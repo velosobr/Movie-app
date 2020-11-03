@@ -1,10 +1,10 @@
-package com.velosobr.movieapp.presentation.movies
+package com.velosobr.movieapp.view.movies
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.velosobr.movieapp.data.model.Movie
-import com.velosobr.movieapp.data.response.MovieBodyResponse
-import com.velosobr.movieapp.data.services.APIService
+import com.velosobr.movieapp.service.model.Movie
+import com.velosobr.movieapp.service.repository.APIService
+import com.velosobr.movieapp.service.response.MovieBodyResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

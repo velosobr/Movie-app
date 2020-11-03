@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.presentation.movies
+package com.velosobr.movieapp.view.movies
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.velosobr.movieapp.R
-import com.velosobr.movieapp.data.model.Movie
+import com.velosobr.movieapp.service.model.Movie
 
 class MoviesAdapter(
     private var movies: List<Movie>,

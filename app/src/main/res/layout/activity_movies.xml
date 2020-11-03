@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/RaisinBlack"
     android:orientation="vertical"
-    tools:context=".presentation.movies.MoviesActivity">
+    tools:context=".view.movies.MoviesActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarMain"

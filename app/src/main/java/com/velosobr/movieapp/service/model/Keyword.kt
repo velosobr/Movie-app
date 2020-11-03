@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.data.model
+package com.velosobr.movieapp.service.model
 
 class Keyword(
         val id: Int,

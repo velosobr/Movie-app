@@ -1,7 +1,7 @@
-package com.velosobr.movieapp.data.services
+package com.velosobr.movieapp.service.repository
 
-import com.velosobr.movieapp.data.LocalData
-import com.velosobr.movieapp.data.response.MovieBodyResponse
+import com.velosobr.movieapp.service.LocalData
+import com.velosobr.movieapp.service.response.MovieBodyResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

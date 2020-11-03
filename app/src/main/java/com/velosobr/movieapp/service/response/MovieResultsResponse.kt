@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.data.response
+package com.velosobr.movieapp.service.response
 
 import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)

@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.presentation.movies
+package com.velosobr.movieapp.view.movies
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.velosobr.movieapp.R
-import com.velosobr.movieapp.presentation.details.MovieDetailsActivity
+import com.velosobr.movieapp.view.details.MovieDetailsActivity
 import kotlinx.android.synthetic.main.activity_movies.*
 
 class MoviesActivity : AppCompatActivity() {

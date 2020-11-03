@@ -1,11 +1,11 @@
-package com.velosobr.movieapp.presentation.details
+package com.velosobr.movieapp.view.details
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.velosobr.movieapp.R
-import com.velosobr.movieapp.data.model.Movie
+import com.velosobr.movieapp.service.model.Movie
 import kotlinx.android.synthetic.main.activity_details.*
 
 class MovieDetailsActivity : AppCompatActivity() {
