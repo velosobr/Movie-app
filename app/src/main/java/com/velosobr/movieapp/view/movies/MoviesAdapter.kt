@@ -33,9 +33,9 @@ class MoviesAdapter(
         notifyDataSetChanged()
     }
 
-    //perguntar sobre o private val onitemclicklistener, duvida de kotlin
     class MoviesViewHolder(
-        itemview: View, private val onItemClickListener: ((movie: Movie) -> Unit)
+        itemview: View,
+        private val onItemClickListener: ((movie: Movie) -> Unit)
     ) : RecyclerView.ViewHolder(itemview) {
 
         private val poster: ImageView = itemview.findViewById(R.id.item_movie_poster)
@@ -53,5 +53,4 @@ class MoviesAdapter(
             }
         }
     }
-
 }

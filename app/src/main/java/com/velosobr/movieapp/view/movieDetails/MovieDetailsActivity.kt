@@ -1,4 +1,4 @@
-package com.velosobr.movieapp.view.details
+package com.velosobr.movieapp.view.movieDetails
 
 import android.content.Context
 import android.content.Intent
@@ -18,7 +18,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     companion object {
-        //Colocando a construção da intent, dentro da activity_details para simplificar e deixar as informações mais fechadas.
+        // Colocando a construção da intent, dentro da activity_details para simplificar e deixar as informações mais fechadas.
         private const val MOVIE_TITLE = "MOVIE_TITLE"
         private const val DESCRIPTION_TEXT = "DESCRIPTION_TEXT"
 

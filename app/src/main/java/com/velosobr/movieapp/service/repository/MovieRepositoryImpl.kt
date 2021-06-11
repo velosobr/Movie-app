@@ -38,9 +38,6 @@ class MovieRepositoryImpl : MovieRepository {
                 override fun onFailure(call: Call<MovieBodyResponse>, t: Throwable) {
                     println("Deu erro" + t.message)
                 }
-
             })
-
     }
-
 }
